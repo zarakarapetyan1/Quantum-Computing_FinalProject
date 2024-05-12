@@ -67,6 +67,23 @@ so, were there is need we flip 0 with 1, and 1 with 1 and get desired cases belo
         0110 (1 time)
 
 So, we decreased the number of possible cases => our initial guess was a 
-good one; however now there is a question of how we can continue taking our next guesses from these options
+good one; however now there is a question of how we can continue taking our next guesses from these options, we tried some possible cases, still I am trying to find optimal ones.
+
+So if we take 1100 as it has high probability, and its score was 2 =>
+=> second guess is 1100- score 2 and have options for it and calculate scores already in compare to our second guess ->
+->      1100 score-4
+        1001 score-2
+        1010 score-2
+        0011 score-0
+        0101 score-2
+        0110 score-2 again, we can decrease or increase digits' confidence to achieve score=2 for all of them :) => flip some 0s with 1s, and some 1s with 0s.
+
+=> we will get
+      2 times 0000 score-2
+              1001 score-2
+              1010 score-2
+      2 times 1111 score-2
+              0101 score-2  
+              0110 score-2
 
 
