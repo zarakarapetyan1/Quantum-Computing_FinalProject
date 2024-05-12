@@ -86,4 +86,56 @@ So if we take 1100 as it has high probability, and its score was 2 =>
               0101 score-2  
               0110 score-2
 
+Now, it is time for our next guess, but still I have not find any good approach to do that, but I am working on it.
+
+Also, there is one approach too
+
+For example, the hiiden number we need to guess is 0010
+we take as our initial guess 0000 with score=3
+and write options (by incrementing by 1) strating from 0000 like that:
+
+0000 score-4   1000 score-3
+0001 score-3   1001 score-2
+0010 score-3   1010 score-2
+0011 score-2   1011 score-1
+0100 score-3   1100 score-2
+0001 score-3   1101 score-1
+0010 score-3   1110 score-1
+0001 score-3   1111 score-0 again, thid time we want to achieve score=3 for sll options, so we do some flips
+
+=> we get
+0000 score-4   1000 score-3
+0001 score-3   0001 score-3
+0010 score-3   0010 score-3
+0001 score-3   0001 score-3
+0100 score-3   0100 score-3
+0001 score-3   0001 score-3
+0010 score-3   0010 score-3
+0001 score-3   0001 score-3
+
+So by erasing dublicates, we will get
+ 2 times 1000
+ 8 times 0001
+ 4 times 0010
+ 2 times 0100 => as the probabilities will stay the same if we divide all them by 2, => we will get ->
+
+
+=> 1 time 1000
+   4 times 0001
+   2 times 0010
+   1 time  0100  and again, though our initial guess succeeded, we still need to find a way how to go ahead and make other choices...
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Also, besides all of this I think it is a good way also to watch the problem from different angle and consider
+the guesses as g_0, g_1, g_2, g_3  have a 
+candidates as  c_0, c_1, c_2, c_3                      and calculate a-b
+having         x_0, x_1, x_2, x_3 find  b for c's
+
+this is also a good way of thinking, I still consider in which direction I will go, the first one using lots of trials, or this one:)
+                                                     
+
+ 
+
+
+
 
