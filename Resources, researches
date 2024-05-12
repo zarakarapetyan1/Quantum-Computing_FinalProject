@@ -2,6 +2,18 @@ First, I watched videos about the game and how to play it to improve my imaginat
 https://www.youtube.com/watch?v=wsYPsrzCKiA - How to Play Mastermind
 https://www.youtube.com/watch?v=Dn0iqlY5tMU
 
-Actually, I find the game very interesting and I would like to play it in real life.
+Actually, I find the game very interesting and I would like to play it in real life :)
 
+Also, while going through the videos, I came across a video where were told how to win the game MasterMind, 
+and I decided to watch it to get some ideas to apply to Quantum Computing topics. 
+Below is the link of video. 
 https://www.youtube.com/watch?v=XX5TlB6xT3M HOW TO WIN
+
+I have separated some key strategies I may apply in my project by watching the video.
+1) One of the strategies is to take two colors each twice(for 4 bits), and by keeping the last two numbers the same,
+it changes the two front numbers to find some pattern; for example, in our case, if I first try 1100, then by keeping 00 the same, try 1000, or 0100 to find some pattern, 
+But that will not work well for our problem of finding the shortest solution. Still, we can try it and be sure whether it will work. 
+
+2) The second strategy I watched is similar to the first one; it puts the last three colors(in our case, digits) the same and tries like that,
+for example, 1000 or 0111. I need to try this, too, but I do not think it will work. 
+
