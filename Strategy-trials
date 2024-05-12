@@ -1,1 +1,12 @@
+Here I again have tried some cases which we tried during pss, lectures to acjieve optimized solution.
+ Case 1)                                    Hidden number - 101011
+         I think to choose as initial guess the same number 000000 score-2
+         then flip first 0 with 1                           100000 score-3
+         then flip the second 0 with 1                      110000 score-2
+         ...                                                101000 score-4
+         ...                                                101100 score-3
+         ...                                                101010 score-5
+         ...                                                101011 score-6
 
+
+         
