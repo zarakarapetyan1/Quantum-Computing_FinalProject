@@ -37,5 +37,36 @@ Also, the connection that we discussed -> 000000 2^0
         0101 score-2     1101 score-1
         0110 score-2     1110 score-1
         0111 score-1     1111 score-0       then as we discussed, as the score of 0000 is 2, maybe we can try to increase or
-                                            decrease the confidence of these cases to get their scores equal to 2 ads well :) :) :)
-                                              
+                                            decrease the confidence of these cases to get their scores equal to 2 as well :) :) :)
+
+so, were there is need we flip 0 with 1, and 1 with 1 and get desired cases below:
+
+        1100    1100
+        1001    1001
+        1010    1010
+        0011    0011
+        1100    1100
+        0101    0101
+        0110    0110
+        0011    0011  now each of these scores are equal to 2. Then we have repetitions here, we can erase them and get ->
+
+        1100 4 times
+        1001 2 times
+        1010 2 times
+        0011 4 times
+        0101 2 times
+        0110 2 times    the probabilities will be the same if we write just  ->
+
+
+
+   ->   1100 2 times
+        1001 (1 time)
+        1010 (1 time)
+        0011 2 times
+        0101 (1 time)
+        0110 (1 time)
+
+So, we decreased the number of possible cases => our initial guess was a 
+good one; however now there is a question of how we can continue taking our next guesses from these options
+
+
