@@ -2,7 +2,8 @@ After doing some research, I think there are some final approaches I can use to 
 Case 1) Using Binary Search, I think this will work if we split our hidden number into two parts,
 then consider and observe the left and right parts according to scores.
 Also, I think that taking our initial guess, always with the digit 0, is the most optimal way of starting our guessing process, 
-so that part, I think I will let stay the same, and always whatever approach I finalize, I will take as first guess the number with all 0s, 000...0.
+so that part, I think I will let stay the same, and always whatever approach I finalize,
+I will take as first guess the number with all 0s, 000...0.
 I think Binary Search can work, as it is quite a widespread search algorithm that people use to solve many problems. 
 So, maybe it will also work to find an optimal solution here :)
 
@@ -30,7 +31,8 @@ Step 1) Initial Guess: 0000
 Step 2) Divide and Flip the First Half:  (Original halves are "00" | "00" , Flipped halves: "11" | "11")
         Guess: "1111" (flipping all bits to 1)
         Score is  2 (two bits match the hidden number: the 1st and 4th bits)
-        Explanation: Flip all bits to see if more bits match. Here, two bits match, indicating that more bits are correct when flipped.
+        Explanation: Flip all bits to see if more bits match. Here, two bits match, 
+        indicating that more bits are correct when flipped.
 
 Step 3) Determine Which Half is More Correct, we need to do some trials to find correctly:
         Next Guess: "1100" (flip the first two bits back to 1)
@@ -54,7 +56,8 @@ Step 5) Identify the Last Correct Bit:
 
        Next Guess: "1101" (flip the third bit to 1)
        Score is 4 (all bits match the hidden number, so we found the hidden number)
-       Explanation: Since the score of "1100" was 3, the 1st, 2nd, and 4th bits are correct. By flipping the third bit to 1, we correctly identify the hidden number.
+       Explanation: Since the score of "1100" was 3, the 1st, 2nd, and 4th bits are correct.
+       By flipping the third bit to 1, we correctly identify the hidden number.
 -----------------------
 Estimating the Complexity
 The initial guess involves creating a binary string of length n, which is O(n).
@@ -79,13 +82,15 @@ The basis states are
 Here a_i -s are the amplitudes for each state.  
 ------------------------------
 Design Quantum Gates for Classical Algorithm Operations
-So, I have not worked much on this, but I think I can apply our favorite Hadamard gate to each qubit :) to create a superposition of all possible states.
+So, I have not worked much on this, but I think I can apply our favorite Hadamard gate to each qubit :) 
+to create a superposition of all possible states.
 For the next steps, I am considering to use Grover's Algorithm's crucial part- Grover's Diffusion Operator for increasing the probability 
 amplitude of the correct answer while decreasing the amplitudes of incorrect answers. 
  
 -----------------------------
-For the last step for applying Designed Gates for Parallelized Move Search- I think I will use Python, but as I am more proficient in Java,
-I might end up providing pseudocode writing with Java, but before that, I need to finalize the Quantum Representation of the Game.
+For the last step for applying Designed Gates for Parallelized Move Search- I think I will use Python,
+but as I am more proficient in Java, I might end up providing pseudocode writing with Java, but before that, 
+I need to finalize the Quantum Representation of the Game.
 
 That's it for now...
 Thank you...
