@@ -1,0 +1,75 @@
+After doing some research, I think there are some final approaches I can use to find my optimal solution. 
+Case 1) Using Binary Search, I think this will work if we split our hidden number into two parts,
+then consider and observe the left and right parts according to scores.
+Also, I think that taking our initial guess, always with the digit 0, is the most optimal way of starting our guessing process, 
+so that part, I think I will let stay the same, and always whatever approach I finalize, I will take as first guess the number with all 0s, 000...0.
+I think Binary Search can work, as it is quite a widespread search algorithm that people use to solve many problems. 
+So, maybe it will also work to find an optimal solution here :)
+
+Before proceeding further, let's examine the trial using the binary search approach.
+First, let's separate the steps we will do accordingly, then try it.
+
+Step 1) Initial Guess:
+        Start with an initial guess of all zeros: 0000...0 as I already said above.
+
+Step 2) Divide and Conquer:
+        Split the bit sequence in two, then flip the halves to switch guesses in response to feedback. 
+
+Step 3) Regular Bit Flipping with Binary Search:
+        Determine which side has more correct bits by using guesses' feedback.
+        To correct guesses, flip a few bits inside the desired half.
+
+
+So, let's try this approach and see what we will get...
+
+Hidden Number: 1101
+
+Step 1) Initial Guess: 0000
+        Score is 1 (since only one bit matches in the 3rd position the hidden number)
+
+Step 2) Divide and Flip the First Half:  (Original halves are "00" | "00" , Flipped halves: "11" | "11")
+        Guess: "1111" (flipping all bits to 1)
+        Score is  2 (two bits match the hidden number: the 1st and 4th bits)
+        Explanation: Flip all bits to see if more bits match. Here, two bits match, indicating that more bits are correct when flipped.
+
+Step 3) Determine Which Half is More Correct, we need to do some trials to find correctly:
+        Next Guess: "1100" (flip the first two bits back to 1)
+        Score: 3 (three bits match the hidden number: the 1st, 2nd, and 4th bits)
+        Explanation: We consider in this case that the first half might have more correct bits,
+        because flipping the first two bits gave a higher score.However,
+        we could start our solution by flipping back not the first two, but las two, so to be mistaken in this case is also possible, 
+        but I think we can always start from left half, see what is going on there, then proceed the right one.
+        Now we narrow down the correct bits and start working on the second half.
+
+Step 4) Identify the Last Correct Bit:
+         Guess: "1110"
+         Score is 2 (only two bits match)
+         Explanation: So, this indicates the 3rd bit was incorrect, so flip it back.
+
+Step 5) "1100" (reverting back to the guess with the highest score so far)
+        Score is 3 (three bits match the hidden number: the 1st, 2nd, and 4th bits)
+        Explanation: So far, this is the guess with highest score
+
+Step 5) Identify the Last Correct Bit:
+
+       Next Guess: "1101" (flip the third bit to 1)
+       Score is 4 (all bits match the hidden number, so we found the hidden number)
+       Explanation: Since the score of "1100" was 3, the 1st, 2nd, and 4th bits are correct. By flipping the third bit to 1, we correctly identify the hidden number.
+-----------------------
+Estimating the Complexity
+The initial guess involves creating a binary string of length n, which is O(n).
+
+Flipping a bit and calculating the score for each bit position involves comparing two binary strings of length n, which O(n) per bit.
+Since there are n bits, the overall complexity for a single iteration is O(n^2).
+And, for the binary search we know it's time complexity is O(logn), so here the division of the sequence 
+and subsequent focusing on halves reduces the number of guesses logarithmically.
+For each division, we perform O(n) operations, and since we are dividing the sequence, the depth of divisions is O(logn).=>
+
+=> Overall, the complexity for the binary search-like strategy can be approximated as:
+O(n^2 log n)
+--------------------------
+3. Quantum Representation of the Game
+To describe the binary Mastermind game using a system of qubits, we can map each bit of the binary string to a qubit.
+
+So, I will maybe use Java or Python to write the coding part for this principle, as I am more flexible doing coding with it.
+
