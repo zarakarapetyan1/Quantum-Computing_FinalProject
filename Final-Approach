@@ -68,8 +68,24 @@ For each division, we perform O(n) operations, and since we are dividing the seq
 => Overall, the complexity for the binary search-like strategy can be approximated as:
 O(n^2 log n)
 --------------------------
-3. Quantum Representation of the Game
+Quantum Representation of the Game
 To describe the binary Mastermind game using a system of qubits, we can map each bit of the binary string to a qubit.
 
-So, I will maybe use Java or Python to write the coding part for this principle, as I am more flexible doing coding with it.
+The basis states are 
+∣0⟩,∣1⟩ for each qubit, and the combined system state can be written as:
 
+∣ψ⟩=a_0∣0000⟩+a_1∣0001⟩+⋯+a_2^n −1 ∣1111⟩
+
+Here a_i -s are the amplitudes for each state.  
+------------------------------
+Design Quantum Gates for Classical Algorithm Operations
+So, I have not worked much on this, but I think I can apply our favorite Hadamard gate to each qubit :) to create a superposition of all possible states.
+For the next steps, I am considering to use Grover's Algorithm's crucial part- Grover's Diffusion Operator for increasing the probability 
+amplitude of the correct answer while decreasing the amplitudes of incorrect answers. 
+ 
+-----------------------------
+For the last step for applying Designed Gates for Parallelized Move Search- I think I will use Python, but as I am more proficient in Java,
+I might end up providing pseudocode writing with Java, but before that, I need to finalize the Quantum Representation of the Game.
+
+That's it for now...
+Thank you...
