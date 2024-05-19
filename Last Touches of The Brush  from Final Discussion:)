@@ -38,3 +38,13 @@ So, during our final project discussion, we discussed a very good idea, which wa
 Number Kepper and Number Guesser, I did not feel that tiny moment before our discussion. 
 Though it makes lots of sense, like how we must apply Grover's algorithm,
 that will not keep as an argument the secret number, though I have not considered that before.
+So, while talking about System of Qubits:
+as we were considering two colors(numbers 0,1), like we were guessing binary numbers, then we'll use 
+n qubits to represent the n-bit sequence as we discussed before. Each qubit can be in either the 
+∣0⟩ state or the ∣1⟩ state, corresponding to the possible values of each bit in the sequence. 
+And while talking about Game states, as our initial guess we have decided to always take with 0s =>
+All qubits will be initialized to ∣0⟩ as initiall guess like ∣ψ =∣0⟩_1⊗∣0⟩_2 ⊗…⊗∣0⟩_n, then for getting superpositions 
+we can apply our favorite Hadamard gates to each qubit, so like that we can get different states, like 
+Initial state, Superposition State...Guess State
+​	
+ 
