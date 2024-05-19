@@ -4,8 +4,8 @@ discuss it here first of all for me, to understand it better and better.
 So, as we considered let s be secret binary, and g be guessed binary number, so let's write 
 s=[s_0, s_1, s_2, s_3] as a secret number
 g=[g_0, g_1, g_2, g_3] as a guessed number
-so, by comparing the guessed number with secret number, the number KEEPER gives feedback in the form of number(score), in our case we will
-assign those scores by k, so ...
+so, by comparing the guessed number with secret number, the number KEEPER gives feedback in the form of number(score), 
+in our case we will assign those scores by k, so ...
 For estimating the complexity and number of possible configurations in different stages of the MasterMind game,
 N_0= 2^n represents the total number of possible combinations or guesses when the game starts,->
 ->since  MasterMind is a game where you guess a sequence of bits (binary digits), and each bit
