@@ -1,4 +1,4 @@
-After doing some research, I think there are some final approaches I can use to find my optimal solution. 
+After doing some research, I think there are some final approaches I can use to find my optimal (CLASSICAL) solutions. 
 Case 1) Using Binary Search, I think this will work if we split our hidden number into two parts,
 then consider and observe the left and right parts according to scores.
 Also, I think that taking our initial guess, always with the digit 0, is the most optimal way of starting our guessing process, 
@@ -86,11 +86,64 @@ So, I have not worked much on this, but I think I can apply our favorite Hadamar
 to create a superposition of all possible states.
 For the next steps, I am considering to use Grover's Algorithm's crucial part- Grover's Diffusion Operator for increasing the probability 
 amplitude of the correct answer while decreasing the amplitudes of incorrect answers. 
- 
+Though, there is n need if doing these staff in this case, for classical solution, in my opinion.
 -----------------------------
-For the last step for applying Designed Gates for Parallelized Move Search- I think I will use Python,
-but as I am more proficient in Java, I might end up providing pseudocode writing with Java, but before that, 
-I need to finalize the Quantum Representation of the Game.
+For the last step for applying Designed Gates for Parallelized Move Search- I am not proficient of Python, 
+and,frankly speaking not so much fond of it, that is why
+I wrote somecode (pseudocode)  with Java.
+Below I have written some Binary working code, based on MasterMind game logic(with two colors),
+though it is not perfect code and has lots of drawbacks, but I think it can serve as a pseudocode to write better code on that. 
 
-That's it for now...
-Thank you...
+public class BinaryMastermind {
+
+    public static void main(String[] args) {
+        // Define the hidden number
+        int[] hiddenNumber = {1, 1, 0, 1};
+
+        // Find the hidden number using the binary search strategy
+        int[] foundNumber = findHiddenNumber(hiddenNumber.length);
+
+        // Print the result
+        System.out.print("Hidden number found: ");
+        for (int bit : foundNumber) {
+            System.out.print(bit);
+        }
+    }
+
+    public static int[] findHiddenNumber(int n) {
+        // Initialize the guess with all zeros
+        int[] guess = new int[n];
+        int score = getScore(guess);
+
+        for (int i = 0; i < n; i++) {
+            // Create a new guess by flipping the i-th bit
+            int[] newGuess = guess.clone();
+            newGuess[i] = 1 - newGuess[i];
+
+            int newScore = getScore(newGuess);
+
+            // If the new score is better, update the guess and score
+            if (newScore > score) {
+                guess = newGuess;
+                score = newScore;
+            }
+        }
+        return guess;
+    }
+
+    // Simulate getting the score based on the hidden number and the guess
+    public static int getScore(int[] guess) {
+        // Hidden number is hardcoded here for simulation
+        int[] hiddenNumber = {1, 1, 0, 1};
+        int score = 0;
+
+        for (int i = 0; i < hiddenNumber.length; i++) {
+            if (guess[i] == hiddenNumber[i]) {
+                score++;
+            }
+        }
+        return score;
+    }
+}
+So, here in this approach and solution strategy, I have not showed so much Quantum logic, or approaches, 
+but I continued some trials(using Quantum Computing approach) in other files of my repo...
