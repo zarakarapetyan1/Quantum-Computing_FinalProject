@@ -46,5 +46,30 @@ And while talking about Game states, as our initial guess we have decided to alw
 All qubits will be initialized to ∣0⟩ as initiall guess like ∣ψ =∣0⟩_1⊗∣0⟩_2 ⊗…⊗∣0⟩_n, then for getting superpositions 
 we can apply our favorite Hadamard gates to each qubit, so like that we can get different states, like 
 Initial state, Superposition State...Guess State
-​	
- 
+​So, we mentioned a one important thing about Grover's algorithm- Oracle:gate that marks the states satisfying a 
+certain condition. In the context of MasterMind, this gate would mark the correct guesses.
+So, if we try to write some pseudocode, it can be designed like this:
+
+// Initialization
+Apply Hadamard gate to all qubits
+
+repeat
+    // Oracle
+    Apply the oracle gate to mark the correct guesses
+    
+    // Amplitude Amplification
+    Apply Hadamard gate to all qubits
+    Apply the oracle gate again
+    Apply Hadamard gate to all qubits
+    
+until termination condition is met
+
+// Measurement
+Measure the qubits to obtain the solution
+
+But how exactly write the Grover's algorithm, that will not take as an argument the secret number, 
+I have not managed to find yet, unfortunately there is no  time left, but I will anyway try to write it later
+
+Also, the discussion of how qubits we will need for our implementation of algorithm, etc. was very useful. 
+
+So, that is it :)
