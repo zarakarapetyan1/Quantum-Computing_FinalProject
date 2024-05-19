@@ -1,0 +1,10 @@
+2. Estimate the complexity of the move search in different stages of the game.
+So, we have discussed this already during our final project last discussion. But I would like to write it, discuss it here first of all for me, to understand it better and better. 
+
+
+
+3. Suggest a system of qubits that describes the game, and define the game states and state
+vectors.
+4. Design quantum gates that implement the operations of the sequential classical algorithm.
+5. Apply the designed gates to superposition states aiming at parallelization of the move
+search.
