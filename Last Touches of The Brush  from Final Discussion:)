@@ -1,0 +1,40 @@
+2. Estimate the complexity of the move search in different stages of the game.
+So, we have discussed this already during our final project last discussion, but I would like to write it, 
+discuss it here first of all for me, to understand it better and better. 
+So, as we considered let s be secret binary, and g be guessed binary number, so let's write 
+s=[s_0, s_1, s_2, s_3] as a secret number
+g=[g_0, g_1, g_2, g_3] as a guessed number
+so, by comparing the guessed number with secret number, the number KEEPER gives feedback in the form of number(score), in our case we will
+assign those scores by k, so ...
+For estimating the complexity and number of possible configurations in different stages of the MasterMind game,
+N_0= 2^n represents the total number of possible combinations or guesses when the game starts,->
+->since  MasterMind is a game where you guess a sequence of bits (binary digits), and each bit
+can be either 0 or 1, the total number of possible combinations for an n will be 2^n
+For example, If n=4 (i.e., the sequence has 4 bits), then the total number of possible combinations is equal to ->
+-> 2^4=16 
+So, after receiving feedback on a guess, we can refine the set of possible guesses based on the Hamming distance.
+In the context of the MasterMind game, the Hamming distance is a measure of the difference between two binary strings (sequences).
+Specifically, it is the number of positions at which the corresponding bits are different. 
+This concept can be applied to understanding the feedback and refining guesses.
+For two binary strings a and b the Hamming distance 
+
+i=0
+∑ d(a,b)= (a_i ⊕ b_i)   , where as we already know  ⊕ denotes the XOR operation.
+i
+
+So, if we know the score k(number of correct bits), => the Hamming distance from the hidden number will be 
+n−k, => number of guesss remained after counting   Hamming distances will be ->
+
+-> N_1 = n!/((k!)(n-k)!)(using the Stirling's Formula,n!≈ sqrt(2pin) * (n/e)^n) ≈
+≈ (sqrt2pin * (n/e)^n)/ sqrt2pik * (k/e)^k * sqrt 2 pi(n-k) * ((n-k))/e))6n-k
+ then, we took k=n/2, I was not remembering why we took it like that, but after seraching it I found out that
+This assumption is based on the idea that the maximum number of ways to choose k bits out of n bits occurs when k is around half of n.
+So, by replacing k with k/2, we got as final result N_1= max= (sqrt2/n)* 2^n/sqrt(n)
+And then by dividing our N_0 to N_1 and getting approximetly sqrt(n), we managed to show the reductio of our search space 
+after computing Hamming distance, and narrowing our guess options. 
+
+----------------------------------------------------------------------------------------------------------------------------------
+So, during our final project discussion, we discussed a very good idea, which was referring to the difference of
+Number Kepper and Number Guesser, I did not feel that tiny moment before our discussion. 
+Though it makes lots of sense, like how we must apply Grover's algorithm,
+that will not keep as an argument the secret number, though I have not considered that before.
